@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a472a">
+    <title>Pizza Sara | Registrieren</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+            <div class="logo">🍕 Pizza Sara</div>
+
+            <nav>
+                <button id="home_page">Home</button>
+                <button id="loginBtn">Anmeldung</button>
+            </nav>
+    </header>
+
+
+    <!-- ==================== Login ==================== -->
+    <div id="loginBox">
+        <h3>Anmeldung</h3>
+
+         <label>Benutzername:</label><br>
+         <input type="text" id="username"><br><br>
+
+         <label>Passwort:</label><br>
+         <input type="password" id="password"><br><br>
+
+         <button onclick="anmelden()">Anmelden</button>
+         <button onclick="schliessen()">Abbrechen</button>
+         <a href="passwortvergessen.html">Passwort vergessen ?</a>
+
+    </div>
+
+    <main>
+        <section class="register-container">
+            <h1>Registrierung</h1>
+            <p>Um Dich zu registrieren, fülle bitte das folgende Formular aus.</p>
+
+            <form id="registerForm">
+                <!-- Geschlecht -->
+                <fieldset>
+                    <legend>Geschlecht</legend>
+                    <label>
+                        <input type="radio" name="geschlecht" value="herr" required>
+                        Herr
+                    </label>
+                    <label>
+                        <input type="radio" name="geschlecht" value="frau" required>
+                        Frau
+                    </label>
+                    <label>
+                        <input type="radio" name="geschlecht" value="divers" required>
+                        Divers
+                    </label>
+                </fieldset>
+
+                <!-- Persönliche Daten -->
+                <fieldset>
+                    <legend>Persönliche Daten</legend>
+
+                    <label for="vorname">Vorname*</label>
+                    <input 
+                        type="text" 
+                        id="vorname" 
+                        name="vorname" 
+                        placeholder="Vorname" 
+                        required
+                        onFocus="hervor(this)"
+                        onBlur="raus(this)">
+
+                    <label for="nachname">Nachname*</label>
+                    <input 
+                        type="text" 
+                        id="nachname" 
+                        name="nachname" 
+                        placeholder="Nachname" 
+                        required
+                        onFocus="hervor(this)"
+                        onBlur="raus(this)">
+
+                    <label for="geburtsdatum">Geburtsdatum</label>
+                    <input 
+                        type="date" 
+                        id="geburtsdatum" 
+                        name="geburtsdatum" 
+                        placeholder="Geburtsdatum"
+                        onFocus="hervor(this)"
+                        onBlur="raus(this)">
+
+                    <label for="email">E-Mail-Adresse*</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="E-Mail-Adresse" 
+                        required
+                        onFocus="hervor(this)"
+                        onBlur="raus(this)">
+
+                    <label for="telefon">Telefonnummer</label>
+                    <input 
+                        type="tel" 
+                        id="telefon" 
+                        name="telefon" 
+                        placeholder="Telefonnummer"
+                        onFocus="hervor(this)"
+                        onBlur="raus(this)">
+                </fieldset>
+
+                <!-- Passwort -->
+                <fieldset>
+                    <legend>Passwort*</legend>
+
+                    <label for="password1">Passwort</label>
+                    <input 
+                        type="password" 
+                        id="password1" 
+                        name="password1" 
+                        placeholder="Passwort" 
+                        required
+                       >
+                        <button type="button">👁</button>
+
+                    <label for="password2">Passwort wiederholen</label>
+                    <input 
+                        type="password" 
+                        id="password2" 
+                        name="password2" 
+                        placeholder="Passwort wiederholen" 
+                        required
+                       >
+                </fieldset>
+
+                <!-- Adresse -->
+                <fieldset>
+                    <legend>Adresse</legend>
+
+                    <label for="klingel">Was steht an der Klingel?</label>
+                    <input 
+                        type="text" 
+                        id="klingel" 
+                        name="klingel" 
+                        placeholder="Was steht an der Klingel?"
+                     >
+
+                    <label for="strasse">Straße</label>
+                    <input 
+                        type="text" 
+                        id="strasse" 
+                        name="strasse" 
+                        placeholder="Straße"
+                        >
+
+                    <label for="hausnr">Hausnummer</label>
+                    <input 
+                        type="text" 
+                        id="hausnr" 
+                        name="hausnr" 
+                        placeholder="Hausnr."
+                      >
+
+                    <label for="plz">Postleitzahl</label>
+                    <input 
+                        type="text" 
+                        id="plz" 
+                        name="plz" 
+                        placeholder="Postleitzahl"
+                        >
+
+                    <label for="ort">Ort</label>
+                    <input 
+                        type="text" 
+                        id="ort" 
+                        name="ort" 
+                        placeholder="Ort"
+                        >
+
+                    <label for="wegbeschreibung">Wegbeschreibung</label>
+                    <textarea 
+                        id="wegbeschreibung" 
+                        name="wegbeschreibung" 
+                        placeholder="Wegbeschreibung"
+                      ></textarea>
+                </fieldset>
+
+                <!-- Button -->
+                <button type="submit" id="btn_register_loginpage" class="btn-register">Registrieren</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

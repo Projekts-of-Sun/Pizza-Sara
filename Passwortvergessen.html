@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a472a">
+    <title>Pizza Sara | Anmeldung</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header>
+    <div class="logo">🍕 Pizza Sara</div>
+    <nav>
+        <button id="home_page_pass_vergessen">Home</button>
+    </nav>
+</header>
+
+    <!-- ==================== Login Box ==================== -->
+    <div id="loginBox" role="dialog" aria-labelledby="loginTitle" aria-hidden="true">
+        <h2 id="loginTitle">Anmeldung</h2>
+        
+        <form id="loginForm">
+            <label for="username">Benutzername:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" required>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Anmelden</button>
+                <button type="button" class="btn-secondary" onclick="schliessen()">Abbrechen</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- ==================== Main Content ==================== -->
+    <main>
+        <section class="password-reset-container">
+            <h1>Passwort vergessen?</h1>
+            <p>Gib Deine E-Mail-Adresse ein und wir schicken Dir einen Link zum Zurücksetzen Deines Passworts.</p>
+
+            <form id="passwordResetForm">
+                <div class="form-group">
+                    <label for="email-vergessen">E-Mail-Adresse*</label>
+                    <input 
+                        type="email" 
+                        id="email-vergessen" 
+                        name="email" 
+                        placeholder="deine-email@beispiel.de" 
+                        required>
+                    <small class="error-message" id="emailError"></small>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Passwort Zurücksetzen</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                ✅ E-Mail versendet! Überprüfe Dein Postfach.
+            </div>
+
+            <p class="login-link">
+                Bereits registriert? <a href="#" id="backToLogin">Zur Anmeldung</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pizza Sara. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
